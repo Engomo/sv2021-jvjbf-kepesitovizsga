@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RecorderRepository extends JpaRepository<Recorder, Long> {
 
-    @Query("select new training360.guinessapp.dto.RecorderShortDto(r.name,r.dateOfBirth) from Recorder r where r.name LIKE 'B%' or r.name like '%e%' order by r.dateOfBirth DESC ")
+    @Query("select new training360.guinessapp.recorders.RecorderShortDto(r.name,r.dateOfBirth) from Recorder r where r.name LIKE 'B%' or r.name like '%e%' order by r.dateOfBirth DESC ")
     List<RecorderShortDto> findAndSort();
 
 }
